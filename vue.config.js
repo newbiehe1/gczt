@@ -28,10 +28,7 @@ if (myProduction) {
     config.devServer = {
         proxy: {
             '/gczt': {
-                // 211
-                // 118
-                target: 'http://192.168.2.209:8080',
-                // target: 'http://192.168.2.118:7788',
+                target: 'http://192.168.10.209:8080',
                 ws: true,
                 changeOrigin: true,
                 secure: false,
