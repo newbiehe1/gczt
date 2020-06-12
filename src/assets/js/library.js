@@ -23,9 +23,9 @@ class Library {
                 if (data.success) {
                     data.success(response);
                 }
-                // if (response.state === 0) {
-                //     store.dispatch('showSlider', response.message);
-                // }
+                if (response.state === 0) {
+                    store.dispatch('showSlider', response.message);
+                }
             },
             error: err => {
                 if (data.error) {

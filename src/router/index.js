@@ -76,20 +76,6 @@ let recursionArr = function (arr, container) {//递归
   })
 };
 
-let systemName = '';
-
-// 请求title
-library.ajaxRequest({
-  way: 'GetVariableData/getValue',
-  parameter: {
-    name: 'SYSTEM_NAME'
-  },
-  success: response => {
-    if (response.state)
-      systemName = response.message;
-    store.dispatch('setSystemName', systemName);
-  }
-})
 
 const createRouter = () => new VueRouter({
   // mode: 'history',
@@ -112,7 +98,7 @@ router.beforeEach((to, from, next) => {
     store.dispatch('hideSlider');
   }
   next(from.path.indexOf(to.path) < 0 || to.path === '/' || from.path === to.path);
-  document.title = to.meta.title ? to.meta.title : systemName;
+  document.title = to.meta.title ? to.meta.title : '文华学院工程制图后台系统';
 })
 
 if (window.location.hash !== '#/' && window.location.hash !== '#/404')
